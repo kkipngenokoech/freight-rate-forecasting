@@ -26,23 +26,34 @@ Time-based holdout (train Jan–Aug, test Sep–Oct), scored under conditions th
 
 *December forecast for the fixed lane. Blue: predicted rate in $ (left axis). Orange: daily market index (right axis). The rate follows the weekly market cycle and ramps up into quarter end.*
 
-## Run it
+## Run it on Google Colab
 
-1. Put the four input CSVs in [`data/`](data/). They are not committed:
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kkipngenokoech/freight-rate-forecasting/blob/main/freight_rate_model.ipynb)
+
+1. Click the badge above to open the notebook in Colab.
+2. Choose **Runtime → Run all**.
+3. When the first cell asks for files, upload the four input CSVs. They are not in this repo:
    - `train-test.csv`: labelled loads, Jan–Oct 2025
    - `validation.csv`: unlabelled loads to forecast, Nov–Dec 2025
    - `validation-predictions-template.csv`: `load_id` order for the output
    - `december-chart-inputs.csv`: fixed-lane rows for December
 
    Hyphenated or underscored names both work.
-2. Install the dependencies and run the notebook. The full run takes about 2 minutes on a laptop:
+4. Wait about 3 minutes. `validation_predictions.csv` and `december_chart_predictions.csv` download automatically at the end.
 
-   ```bash
-   python -m pip install -r requirements.txt
-   python -m nbconvert --to notebook --execute --inplace freight_rate_model.ipynb
-   ```
+Colab already has every library the notebook needs, so nothing needs installing.
 
-The notebook writes both prediction files and the figures in `figures/`.
+<details>
+<summary>Run locally instead</summary>
+
+Put the four CSVs in [`data/`](data/), then:
+
+```bash
+python -m pip install -r requirements.txt
+python -m nbconvert --to notebook --execute --inplace freight_rate_model.ipynb
+```
+
+</details>
 
 ## Approach
 
