@@ -1,6 +1,6 @@
 # Freight Rate Forecasting
 
-Forecasts truck-load freight rates (`posted_rate`) two months ahead. The model is a ridge regression plus gradient boosting, validated on time-based splits.
+Forecasts truck-load freight rates (`posted_rate`) two months ahead. The task brief is in [`docs/freight-rate-ml-assessment.pdf`](docs/freight-rate-ml-assessment.pdf). The model is a ridge regression plus gradient boosting, validated on time-based splits.
 
 | | |
 | --- | --- |
@@ -113,5 +113,6 @@ Loads touching a city not seen in training use a twin model without city effects
 ├── december_chart_predictions.csv  # fixed-lane December forecast
 ├── figures/                        # EDA, diagnostics, December forecast
 ├── data/                           # input CSVs
+├── docs/                           # task brief (PDF)
 └── requirements.txt
 ```
