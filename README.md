@@ -32,21 +32,21 @@ Time-based holdout (train Jan–Aug, test Sep–Oct), scored under conditions th
 
 1. Click the badge above to open the notebook in Colab.
 2. Choose **Runtime → Run all**.
-3. When the first cell asks for files, upload the four input CSVs. They are not in this repo:
-   - `train-test.csv`: labelled loads, Jan–Oct 2025
-   - `validation.csv`: unlabelled loads to forecast, Nov–Dec 2025
-   - `validation-predictions-template.csv`: `load_id` order for the output
-   - `december-chart-inputs.csv`: fixed-lane rows for December
+3. Wait about 3 minutes. The notebook downloads its input data from [`data/`](data/) in this repo, and at the end `validation_predictions.csv` and `december_chart_predictions.csv` download to your computer.
 
-   Hyphenated or underscored names both work.
-4. Wait about 3 minutes. `validation_predictions.csv` and `december_chart_predictions.csv` download automatically at the end.
+Input files in [`data/`](data/):
+
+- `train-test.csv`: labelled loads, Jan–Oct 2025
+- `validation.csv`: unlabelled loads to forecast, Nov–Dec 2025
+- `validation-predictions-template.csv`: `load_id` order for the output
+- `december-chart-inputs.csv`: fixed-lane rows for December
 
 Colab already has every library the notebook needs, so nothing needs installing.
 
 <details>
 <summary>Run locally instead</summary>
 
-Put the four CSVs in [`data/`](data/), then:
+From a clone of the repo:
 
 ```bash
 python -m pip install -r requirements.txt
@@ -112,6 +112,6 @@ Loads touching a city not seen in training use a twin model without city effects
 ├── validation_predictions.csv      # Nov–Dec forecasts
 ├── december_chart_predictions.csv  # fixed-lane December forecast
 ├── figures/                        # EDA, diagnostics, December forecast
-├── data/                           # input CSVs go here (not committed)
+├── data/                           # input CSVs
 └── requirements.txt
 ```
