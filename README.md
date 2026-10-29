@@ -20,7 +20,7 @@ Time-based holdout (train Jan–Aug, test Sep–Oct), scored under conditions th
 
 - **Backtest:** the hybrid averages **1.33%** when each month from Jun to Oct is predicted from the months before it.
 - **New cities:** loads touching cities never seen in training score 1.61%.
-- **Rows:** "clean rows" excludes the ~1.4% of labels identified as corrupted. "All rows" includes them; no model can predict those rows.
+- **Rows:** "clean rows" excludes the ~1.4% of suspected corrupted labels, flagged using each split's training window only (this selects exactly the same rows as flagging on all labelled data, so no holdout leakage). "All rows" includes them and is the stricter number.
 
 ![December forecast](figures/december_forecast.png)
 
@@ -69,7 +69,7 @@ The loads to forecast (Nov–Dec 2025) come after all the labelled data (Jan–O
 
 | Issue | Handling |
 | --- | --- |
-| ~1.4% corrupted labels (0.2–0.45× or 2.2–5.4× the normal rate, with an empty gap between them and the normal rows) | Flagged with a first-pass model; excluded from training |
+| ~1.4% suspected corrupted labels (0.2–0.45× or 2.2–5.4× the expected rate, with an empty gap between them and the normal rows) | Flagged with a first-pass model; excluded from training |
 | Negative weights | Sign flipped. These rows price like normal loads. |
 | Weight capped at 47,500 lb | Value kept; cap flag added |
 | Missing `market_index` | Filled with that day's mean. It is a daily level plus small noise. |
