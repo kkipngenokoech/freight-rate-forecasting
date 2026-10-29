@@ -37,10 +37,10 @@ Time-based holdout (train Jan–Aug, test Sep–Oct), scored under conditions th
 
 Input files in [`data/`](data/):
 
-- `train-test.csv`: labelled loads, Jan–Oct 2025
+- `train_test.csv`: labelled loads, Jan–Oct 2025
 - `validation.csv`: unlabelled loads to forecast, Nov–Dec 2025
-- `validation-predictions-template.csv`: `load_id` order for the output
-- `december-chart-inputs.csv`: fixed-lane rows for December
+- `validation_predictions_template.csv`: `load_id` order for the output
+- `december_chart_inputs.csv`: fixed-lane rows for December
 
 Colab already has every library the notebook needs, so nothing needs installing.
 
