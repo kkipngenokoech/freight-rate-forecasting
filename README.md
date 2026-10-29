@@ -4,6 +4,7 @@ Forecasts truck-load freight rates (`posted_rate`) two months ahead. The task br
 
 | | |
 | --- | --- |
+| **Report** | [`report.pdf`](report.pdf): split and validation approach, findings, December chart from the provided `score.py` |
 | **Code** | [`freight_rate_model.ipynb`](freight_rate_model.ipynb): EDA → cleaning → validation → final model → predictions |
 | **Predictions** | [`validation_predictions.csv`](validation_predictions.csv): 12,000 Nov–Dec loads, `load_id,predicted_rate` |
 | **Fixed-lane forecast** | [`december_chart_predictions.csv`](december_chart_predictions.csv): Lexington → Fort Wayne, 360 mi, Dry Van, 32,000 lb, every day of December |
