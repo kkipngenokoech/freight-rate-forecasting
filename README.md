@@ -54,6 +54,12 @@ python -m pip install -r requirements.txt
 python -m nbconvert --to notebook --execute --inplace freight_rate_model.ipynb
 ```
 
+Validate both outputs and regenerate `scorer_results/candidate_december.png` with the provided scorer:
+
+```bash
+python score.py --predictions validation_predictions.csv --december-predictions december_chart_predictions.csv
+```
+
 </details>
 
 ## Approach
@@ -112,6 +118,9 @@ Loads touching a city not seen in training use a twin model without city effects
 ├── freight_rate_model.ipynb        # full pipeline, outputs saved
 ├── validation_predictions.csv      # Nov–Dec forecasts
 ├── december_chart_predictions.csv  # fixed-lane December forecast
+├── report.pdf                      # submission report
+├── score.py                        # provided scorer: validates outputs, draws the December chart
+├── scorer_results/                 # chart produced by score.py
 ├── figures/                        # EDA, diagnostics, December forecast
 ├── data/                           # input CSVs
 ├── docs/                           # task brief (PDF)
